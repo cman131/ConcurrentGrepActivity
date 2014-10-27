@@ -4,6 +4,11 @@ import java.io.FileNotFoundException;
 import java.util.regex.Pattern;
 
 
+/**
+ * Main CGREP class for concurrent lock
+ * /
+ */
+
 public class CGrep {
 
 	/**
@@ -15,5 +20,4 @@ public class CGrep {
 		FileInputStream file = new FileInputStream(new File(args[1]));
 		
 	}
-
 }
