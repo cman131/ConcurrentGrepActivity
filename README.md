@@ -1,10 +1,10 @@
 ConcurrentGrepActivity
 ======================
 
-The Problem
+<h2>The Problem</h2> <br>
 For this activity your team will implement a version of concurrent grep via Callables, Futures and Executors. Your program will be invoked on the command line as follows:
 
-java CGrep pattern [file . . .]
+<code>java CGrep pattern [file . . .]</code>
 
 We suggest you familiarize yourself with the java.util.regex package, as you'll use this to do pattern matching. In particular, the pattern argument is an arbitrary regular expression conforming to the syntax recognized by the java.util.regex.Pattern class.
 
@@ -22,9 +22,9 @@ When the matching lines for all files have been printed, the main thread ensures
 
 Hint: Consider using an ExecutorCompletionService decorating the fixed thread pool ExecutorService.
 
-Implementation Notes
+<h2>Implementation Notes</h2> <br>
 Obviously, then, the main method will be in a class CGrep contained in CGrep.java. You are free to create any other java files you need to solve the problem, but all classes must be in the default package. I will compile your source files using the command:
 
-javac *.java
+<code>javac *.java </code>
 
 and then run the java command on CGrep with my test data files.
