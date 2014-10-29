@@ -19,9 +19,10 @@ public class Grepper implements Callable<Found>{
 		ArrayList<String> results = new ArrayList<String>();
 		Matcher matcher;
 		File file = new File(fileName);
+		Scanner sc = null;
 		try {
 			int lineCount = 1;
-			Scanner sc = new Scanner(file);
+			sc = new Scanner(file);
 
 			while (sc.hasNextLine()) {
 				String line = sc.nextLine();
@@ -31,10 +32,14 @@ public class Grepper implements Callable<Found>{
 				}
 				lineCount++;
 			}
-			sc.close();
 		} 
 		catch (FileNotFoundException e) {
 			e.printStackTrace();
+		}finally {
+			// Sorry, just that if there is an exception, this would never have been closed.
+			if(sc != null) {
+				sc.close();
+			}
 		}
 		return new Found(fileName, results);
 	}

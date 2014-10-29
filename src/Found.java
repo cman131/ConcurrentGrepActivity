@@ -25,5 +25,15 @@ public class Found {
     public ArrayList<String> getMatchingLines() {
         return this.matchingLines;
     }
+    
+    @Override
+    public String toString() {
+    	// A nice and fancy print out of the results for another class to print
+    	// Tip: StringBuilder is a nice efficient way to loop and append data
+    	// 		to a string.  Concatenation using '+' works too but it isn't
+    	//		as efficient so, if you aren't familiar with StringBuilder
+    	//		it is a perfect opportunity.
+    	return "";
+    }
 
 }
