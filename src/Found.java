@@ -10,9 +10,20 @@ public class Found {
     private ArrayList<String> matchingLines;
 
 
+    /**
+     * Data container for whatever the Grepper found in the file.
+     *
+     * @param filename      - The file name that the Grepper searched through
+     * @param matchingLines - Array
+     *                      Formatted: ["$line# $actualline"...]
+     */
     public Found(String filename, ArrayList<String> matchingLines) {
         this.filename = filename;
         this.matchingLines = matchingLines;
+    }
+
+    public ArrayList<String> getMatchingLines() {
+        return this.matchingLines;
     }
 
 }
