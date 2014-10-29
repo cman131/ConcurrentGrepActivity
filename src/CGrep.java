@@ -1,6 +1,8 @@
+import java.io.Console;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 
@@ -17,7 +19,16 @@ public class CGrep {
 	 */
 	public static void main(String[] args) throws FileNotFoundException {
 		Pattern pattern = Pattern.compile(args[0]);
-		FileInputStream file = new FileInputStream(new File(args[1]));
-		
+		if ( args.length == 1 ) {
+			String input;
+			Console console = System.console();
+			input = console.readLine("Enter input:");
+		}
+		else {
+			ArrayList<String> files = new ArrayList<String>();
+			for ( int c = 1; c < args.length; c++ ) {
+				files.add(args[c]);
+			}
+		}
 	}
 }
