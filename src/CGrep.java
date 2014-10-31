@@ -39,6 +39,7 @@ public class CGrep {
 
 
         // Create the Grep Executor
+        System.out.println("Creating new Executor service");
         GrepExecutor ge = new GrepExecutor();
         ge.beginSearch(files, pattern);
 

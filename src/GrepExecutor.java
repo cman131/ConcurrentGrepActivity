@@ -52,6 +52,7 @@ public class GrepExecutor {
 		/* FOR ADDING DATA TO BE QUERIED */
 
         for (String filename : filenames) {
+            System.out.println("Submitting " + filename + " for search");
             executor.submit(new Grepper(filename, pattern));  // This will start running immediately
         }
 
