@@ -30,7 +30,7 @@ public class Grepper implements Callable<Found> {
                 String line = sc.nextLine();
                 matcher = this.pattern.matcher(line);
                 if (matcher.find()) {
-                    results.add("Line " + lineCount + " " + line);
+                    results.add("Line " + lineCount + ": " + line);
                 }
                 lineCount++;
             }

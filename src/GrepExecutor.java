@@ -53,7 +53,7 @@ public class GrepExecutor {
 
         for (String filename : filenames) {
             System.out.println("Submitting " + filename + " for search");
-            executor.submit(new Grepper(filename, pattern));  // This will start running immediately
+            completionService.submit(new Grepper(filename, pattern));  // This will start running immediately
         }
 
 
@@ -88,5 +88,7 @@ public class GrepExecutor {
             }
 
         }
+
+        executor.shutdownNow();
     }
 }
