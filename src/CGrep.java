@@ -27,7 +27,7 @@ public class CGrep {
         }
 
         ArrayList<String> files = new ArrayList<String>();
-        Pattern pattern = Pattern.compile(String.format("^%s$", args[0]));
+        Pattern pattern = Pattern.compile(args[0]);
 
         if (args.length == 1) {
             String input;
