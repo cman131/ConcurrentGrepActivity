@@ -101,6 +101,8 @@ public class CGrep {
 	 * @throws FileNotFoundException
 	 */
 	public static void main(String[] args) throws FileNotFoundException {
+        //Check if no args plz TODO
+
 		Pattern pattern = Pattern.compile(String.format("^%s$", args[0]));
 		if (args.length == 1) {
 			String input;
