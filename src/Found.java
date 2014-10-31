@@ -29,11 +29,16 @@ public class Found {
     @Override
     public String toString() {
     	// A nice and fancy print out of the results for another class to print
-    	// Tip: StringBuilder is a nice efficient way to loop and append data
-    	// 		to a string.  Concatenation using '+' works too but it isn't
-    	//		as efficient so, if you aren't familiar with StringBuilder
-    	//		it is a perfect opportunity.
-    	return "";
+    	StringBuilder retString = new StringBuilder();
+    	retString.append("File: "+filename+"\n");
+    	retString.append("----------------\n");
+    	retString.append("Matching Lines:\n");
+    	
+    	// Totally fancy list of matching lines
+    	for(String str : matchingLines){
+    		retString.append(str+"\n");
+    	}
+    	return retString.toString();
     }
 
 }
