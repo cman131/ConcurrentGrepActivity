@@ -30,7 +30,7 @@ public class Found {
     public String toString() {
     	// A nice and fancy print out of the results for another class to print
     	StringBuilder retString = new StringBuilder();
-    	retString.append("File: "+filename+"\n");
+    	retString.append("\nFile: "+filename+"\n");
     	retString.append("----------------\n");
     	retString.append("Matching Lines:\n");
     	
