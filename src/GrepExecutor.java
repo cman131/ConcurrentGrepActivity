@@ -32,7 +32,7 @@ public class GrepExecutor {
                         if (executor.awaitTermination(5, TimeUnit.SECONDS)) {
                             break;
                         }
-                    } catch (InterruptedException e) {
+                    } catch (InterruptedException ignored) {
                     }
                 }
                 System.out.println("Closing now");
@@ -61,16 +61,16 @@ public class GrepExecutor {
 		/* completionService.take() will wait until the next Found is completed
             which satisfied the requirement that we print the results as they
 			are completed */
-        // Loop through the futures in the list
         for (int i = 0; i < filenames.size(); i++) {
             Future<Found> future = null;
             try {
+                // This will wait until we get a result
                 future = completionService.take();
             } catch (InterruptedException e1) {
                 e1.printStackTrace();
             }
 
-            // Now we have our future, get the final resulting Found object
+            // Now we have our future in our hands, get the final resulting Found object
             Found result = null;
             try {
                 result = future.get();
@@ -81,12 +81,10 @@ public class GrepExecutor {
             }
 
             // Print the results of this query
-            if (result == null) {
-                // If the results are null, print error message
-                System.err.println("Whoops! Query number " + i + " came back null");
-                return;
+            assert result != null;
+            if (!result.getMatchingLines().isEmpty()) {
+                System.out.println(result);
             }
-            System.out.println(result);
 
         }
     }
